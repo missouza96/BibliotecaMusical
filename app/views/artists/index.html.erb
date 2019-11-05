@@ -1,7 +1,24 @@
-<h3> Artists List <% @artists.index.count %>  </h3>
-<%=link_to "Create artist", new_artist_path %>
-<ol>
-    <% @artists.each do |artist|%>
-        <li> <%= link_to artist.name , artist%> </li>
-    <% end %>
-</ol>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Artists</title>
+</head>
+<body>
+	<center>
+		<h3> Artist List</h3>
+		<div class="list-group">
+			
+			<% @artists.each do |ar| %>
+
+			<li class="list-group-item list-group-item">
+				<%= ar.name %>
+				<%= link_to "Artist", controller: "artists_controller",  action: "show", id: @artists %>
+				<% end -%>
+			</li>
+
+		</div>		
+	</center>>
+</body>
+</html>
+
+
