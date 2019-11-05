@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Artist Albums</title>
+</head>
+<body>
+	<center>
+		<h3> <%= @artists.name %> Albums</h3><br> 
+
+		<% @albums = Album.where(artist: @artists.id) %>
+
+		<%= @albums.each do |alb| %>
+
+			<div class="card" style="width: 18rem;">
+			<div class="card-body"> 
+			<h5 class="card-title">
+				<%= alb.title %>
+			</h5>
+			 
+			 <!-- DUVIDA COMO MOSTRAR -->
+
+			<p class="card-text"> Tracks: </p>
+			<p class="card-text"> Created at: </p>
+			<p class="card-text"> Update at: </p>
+
+
+			<a href="#" class="btn btn-primary">Go somewhere</a>
+		</div>
+		<% end %>
+
+	</center>
+</body>
+</html>

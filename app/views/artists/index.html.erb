@@ -6,18 +6,18 @@
 <body>
 	<center>
 		<h3> Artist List</h3>
+
 		<div class="list-group">
 			
 			<% @artists.each do |ar| %>
 
 			<li class="list-group-item list-group-item">
-				<%= ar.name %>
-				<%= link_to "Artist", controller: "artists_controller",  action: "show", id: @artists %>
-				<% end -%>
+				<%= link_to ar.name, action: "show", id: ar %>
+				
 			</li>
-
+			<% end -%>
 		</div>		
-	</center>>
+	</center>
 </body>
 </html>
 

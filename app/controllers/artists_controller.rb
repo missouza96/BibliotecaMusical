@@ -1,10 +1,10 @@
 class ArtistsController < ApplicationController
 	def index
-		@artists = Artist.order(:name)
+		@artists = Artist.order(:name) #mostra todos
 	end
 
 	def show
-		@artists = Artist.find(params[:id])
+		@artists = Artist.find(params[:id]) #mostra cada artista
 	end
 
 end
