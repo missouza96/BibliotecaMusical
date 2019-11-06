@@ -18,8 +18,8 @@
 			<!-- DUVIDA COMO MOSTRAR -->
 
 			<p class="card-text"> Tracks: <%= alb.tracks.count %> </p>
-			<p class="card-text"> Created at: <%= alb.created_at %> </p>
-			<p class="card-text"> Update at: <%= alb.updated_at %> </p>
+			<p class="card-text"> Created at: <%= alb.created_at.strftime("%m/%d/%Y %I:%M%p") %> </p>
+			<p class="card-text"> Update at: <%= alb.updated_at.strftime("%m/%d/%Y %I:%M%p") %> </p>
 
 
 			<a href="#" class="btn btn-primary">Go somewhere</a>
