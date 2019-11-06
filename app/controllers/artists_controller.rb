@@ -4,11 +4,14 @@ class ArtistsController < ApplicationController
 	end
 
 	def show
-		@artists = Artist.find(params[:id]) #mostra cada artista
+		@artist = Artist.find(params[:id]) #mostra cada artista
+		@albums  = @artist.albums
 	end
-	def delete
-		
+
+	def destroy
+
 	end
+
 	def update
 
 	end

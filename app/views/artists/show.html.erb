@@ -5,23 +5,21 @@
 </head>
 <body>
 	<center>
-		<h3> <%= @artists.name %> Albums</h3><br> 
+		<h3> <%= @artist.name %> Albums</h3><br>
 
-		<% @albums = Album.where(artist: @artists.id) %>
+	<% @albums.each do |alb| %>
 
-		<%= @albums.each do |alb| %>
-
-			<div class="card" style="width: 18rem;">
-			<div class="card-body"> 
+	<div class="card" style="width: 18rem;">
+		<div class="card-body">
 			<h5 class="card-title">
 				<%= alb.title %>
 			</h5>
-			 
-			 <!-- DUVIDA COMO MOSTRAR -->
 
-			<p class="card-text"> Tracks: </p>
-			<p class="card-text"> Created at: </p>
-			<p class="card-text"> Update at: </p>
+			<!-- DUVIDA COMO MOSTRAR -->
+
+			<p class="card-text"> Tracks: <%= alb.tracks.count %> </p>
+			<p class="card-text"> Created at: <%= alb.created_at %> </p>
+			<p class="card-text"> Update at: <%= alb.updated_at %> </p>
 
 
 			<a href="#" class="btn btn-primary">Go somewhere</a>
