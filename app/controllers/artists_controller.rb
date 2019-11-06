@@ -6,5 +6,10 @@ class ArtistsController < ApplicationController
 	def show
 		@artists = Artist.find(params[:id]) #mostra cada artista
 	end
+	def delete
+		
+	end
+	def update
 
+	end
 end

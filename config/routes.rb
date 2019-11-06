@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :artists 
-  resources :tracks
-  resources :albums
+  resources :tracks, except :destroy
+  resources :albums, except :destroy
   root 'artists#index'
-  root 'artists#show'
 end
