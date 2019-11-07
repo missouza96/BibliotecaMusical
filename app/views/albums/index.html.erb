@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Albums</title>
+</head>
+<body>
+	<center>
+		<h3> Album List</h3>
+
+		<div class="list-group">
+			
+			<% @albums.each do |ar| %>
+
+			<li class="list-group-item list-group-item">
+				<%= link_to ar.name, action: "show", id: ar %>
+				
+			</li>
+			<% end -%>
+		</div>		
+	</center>
+</body>
+</html>
