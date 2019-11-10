@@ -1,10 +1,10 @@
 class AlbumsController < ApplicationController
     def index
-      @albums = Album.filtrar(params['title'])
+      @albums = Album.order(:name)
       end
     
       def show
-        @albums = Album.find(params[:id])
+        @album = Album.find(params[:id])
       end
 
       def new 
