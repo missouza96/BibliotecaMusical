@@ -11,11 +11,12 @@
 
 			<%= form_for @artist, :url =>{:action => "update", :id =>@artist} do |f| %>
 			<p>Name: <%= f.text_field 'name' %></p>
-			<button type="button" class="btn btn-primary"><%= f.submit "Submit" %></button>
+			<button type="button" class="btn btn-primary"><%= link_to "Submit", action: "update" %>
+			</button>
 
 			<% end %>
 
-			<button type="reset" class="btn btn-secondary">Cancel</button>
+			<button type="reset" class="btn btn-secondary"><%= link_to 'Cancel', action: "show" %></button>
 
 			
 	</center>
