@@ -3,21 +3,35 @@
 <head>
 	<title>Artists</title>
 </head>
-<body>
-	<center>
-		<h3> Artist List</h3>
+<body> 
 
-		<div class="list-group">
-			
-			<% @artists.each do |ar| %>
+	<br>	
+	<div class="container">
 
-			<li class="list-group-item list-group-item">
-				<%= link_to ar.name, action: "show", id: ar %>
-				
-			</li>
-			<% end -%>
-		</div>		
-	</center>
+		<h3>Artist List  
+		<label class="d-inline p-1 bg-primary text-white rounded-pill "><%= Artist.count %></label> 			
+		<p class="text-secondary">Click name to see album.</p></h3>
+
+		<form class="form-inline my-2 my-lg-0">
+			<div class="text-nowrap bd-highlight">
+				Search for:
+			</div>
+			<input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		</form>
+		<div class="row">
+			<div class="list-group">
+
+				<% @artists.each do |ar| %>
+
+				<li class="list-group-item list-group-item">
+					<%= link_to ar.name, action: "show", id: ar %>
+
+				</li>
+				<% end -%>
+			</div>	
+		</div>
+	</div>
 </body>
 </html>
 

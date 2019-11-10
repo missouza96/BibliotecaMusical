@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Artists</title>
+</head>
+<body>
+	<center>
+		<br>
+		<h3><p class="text-secondary">Edit Artist</p></h3>
+
+
+			<%= form_for @artist, :url =>{:action => "update", :id =>@artist} do |f| %>
+			<p>Name: <%= f.text_field 'name' %></p>
+			<button type="button" class="btn btn-primary"><%= f.submit "Submit" %></button>
+
+			<% end %>
+
+			<button type="button" class="btn btn-secondary"><% link_to action: "show" %> Cancel</button>
+
+			
+	</center>
+	
+
+</body>
+</html>
