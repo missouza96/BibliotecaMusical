@@ -7,11 +7,11 @@
 
 	<center>
 		<h3> <%= @album.name %> Albums</h3><br>
-		<% @albums = Album.where(artist: @artist.id)%>
-
-		
+			
 			
 			<% @albums.each do |alb| %>
+				<li> <% = link_to album.title, album %>
+				</li>
 
 			<div class="accordion" id="accordionExample">
   <div class="card">
