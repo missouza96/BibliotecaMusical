@@ -3,39 +3,35 @@
 <head>
   <title>Albums</title>
 </head>
-<body>
+<body> 
 
-  <center>
-        
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Show tracks</a>
-  </div>
-</div>
+  <br>  
+  <div class="container">
 
-  <div class="row">
+    <h3>Album List  
+    <label class="d-inline p-1 bg-primary text-white rounded-pill "><%= Album.count %></label>       
+    <p class="text-secondary">Click name to see tracks.</p></h3>
+
+    <form class="form-inline my-2 my-lg-0">
+      <div class="text-nowrap bd-highlight">
+        Search for:
+      </div>
+      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <div class="row">
       <div class="list-group">
 
         <% @albums.each do |alb| %>
 
         <li class="list-group-item list-group-item">
-          <%= link_to ar.title, action: "show", id: ar %>
+          <%= link_to alb.title, action: "show", id: alb %>
 
         </li>
         <% end -%>
       </div>  
     </div>
- 
-</ul>
-  
-
-      
-    
-        
-        
-  </center>
+  </div>
 </body>
 </html>
 

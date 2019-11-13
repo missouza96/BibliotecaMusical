@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Albums Tracks </title>
+</head>
+<body>
+	<center>
+		<h3> <%= @album.title %> Tracks</h3><p class="text-secondary">Click track to see details.</p><br> 
+
+		<% @tracks.each do |trac| %>
+		<div class="accordion" id="accordionExample">
+	  	<div class="card">
+			    <div class="card-header" id="headingOne">
+			      <h2 class="mb-0">
+			        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+			          <%= trac.name %>
+			        </button>
+			      </h2>
+			    </div>
+
+			    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+			      <div class="card-body"> 
+			      	Media Type: <%= trac.media_type %>
+			      	Genre: <%= trac.genre %>
+			      	Time: <%= trac.milliseconds %>
+			      	Price: <%= trac.unit_price %>
+			      	Size: <%= trac.bytes %>
+			      	Composer: 
+			        
+			      </div>
+		    	</div>
+  			</div>
+
+  	<a href="/albums/update">
+		<button type="button" class="btn btn-info"> <%= link_to  "Edit", edit_album_path %></button>
+	</a>
+
+	</center>
+</body>
+</html>
