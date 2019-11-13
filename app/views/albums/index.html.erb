@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Albums</title>
+  <title>Albums</title>
 </head>
 <body>
 
-	<center>
-				
-			<div class="list-group-item">
-				<% @albums.each do |alb| %>
+  <center>
+        
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Show tracks</a>
+  </div>
+</div>
 
-				<li class = "list-group-item list-group-item"> 
-					<% = link_to alb.title, action: "show", id: alb %>
-				</li>
+  <div class="row">
+      <div class="list-group">
 
-			<ul class="list-group">
+        <% @albums.each do |alb| %>
 
-  
-  <
+        <li class="list-group-item list-group-item">
+          <%= link_to ar.title, action: "show", id: ar %>
+
+        </li>
+        <% end -%>
+      </div>  
+    </div>
+ 
 </ul>
   
 
-			
+      
     
-   			
-				
-	</center>
+        
+        
+  </center>
 </body>
 </html>
 
