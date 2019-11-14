@@ -9,18 +9,12 @@
 		<h3><p class="text-secondary">Edit Artist</p></h3>
 
 
-			<%= form_for @artist, :url =>{:action => "update", :id =>@artist} do |f| %>
+		<%= form_for @artist, :url =>{:action => "update", :id =>@artist} do |f| %>
 			<p>Name: <%= f.text_field 'name' %></p>
-			<button type="button" class="btn btn-primary"><%= link_to "Submit", action: "update" %>
-			</button>
+			<%= f.submit "Submit", class: "btn btn-primary" %>
+			<%= link_to 'Back', :back, class: "btn btn-secondary"%>
 
 			<% end %>
-
-			<button type="reset" class="btn btn-secondary"><%= link_to 'Cancel', action: "show" %></button>
-
-			
-	</center>
-	
-
+	</center>	
 </body>
 </html>
