@@ -3,10 +3,12 @@ class AlbumsController < ApplicationController
 		@albums = Album.all
 	end
 
+
 	def show
 		@album = Album.find(params[:id])
 		@tracks = @album.tracks
 	end
+
 
 	def edit
 		 @artists = Artist.all
@@ -25,6 +27,23 @@ class AlbumsController < ApplicationController
 		end
 	end
 
+
+	def create
+      @artists = Artist.all
+      @album = Album.new(album_params)
+      if @album.save
+          redirect_to @album
+      else
+          render :new
+      end
+    end
+  
+
+	def new 
+		@artists = Artist.all 
+		@album = Album.new
+	end
+	
 
 	private 
 	def album_params
