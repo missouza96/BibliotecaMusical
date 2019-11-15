@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
     def index
 		@albums = Album.all
+		
 	end
 
 
@@ -43,7 +44,7 @@ class AlbumsController < ApplicationController
 		@artists = Artist.all 
 		@album = Album.new
 	end
-	
+
 
 	private 
 	def album_params
