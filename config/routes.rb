@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :tracks
   resources :albums
   root 'artists#index'
-  root 'albums#index'
+  
 end
 
 
