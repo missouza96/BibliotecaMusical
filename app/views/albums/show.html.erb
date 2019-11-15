@@ -26,7 +26,7 @@
 
 <!-- ACOORDION NÃO ESTÁ FUNCIONANDO -->
 
-<div class="accordion"> 
+<div id="accordion"> 
 
  
 	<% @tracks.each do |trac| %>
@@ -34,16 +34,16 @@
   <div class="container">
   <div class="card">
            <div class="card-header" id="heading<%= trac.id%>">
-             <h2 class="mb-0">
+             <h5 class="mb-0">
 
                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse<%= trac.id%>" aria-expanded="false" aria-controls="collapse<%= trac.id%>">
                  <%= trac.name%>
                </button>
-             </h2>
+             </h5>
            </div>
 
 
-       <div id="collapse<%= trac.id%>" class="collapse show" aria-labelledby="heading<%= trac.id%>" data-parent="#accordionExample">
+       <div id="collapse<%= trac.id%>" class="collapse" aria-labelledby="heading<%= trac.id%>" data-parent="#accordion">
          <div class="card-body">
            <b> Media Type: </b> <%= trac.media_type.name %> <br>
            <b> Genre: </b> <%= trac.genre.name %> <br>
