@@ -1,7 +1,21 @@
-<h3> Showing Tracks of <%= @album.title %> </h3>
+<!-- arrumar o link dos botões de Album e Artista -->
 
-<div class="mb-3">
+<div class="container">
+<%= link_to "Go To Albums", edit_album_path, class: "btn btn-outline-info" %>
+<%= link_to "Go To Artists", edit_artist_path, class: "btn btn-outline-info" %>
+
+
+<div class="mx-auto" style="width: 500px;">
+  <h3> Album: <%= @album.title %> </h3>
+  <p class="text-center">Lista de músicas desse álbum.</br>
+  Clique na música para exibir os detalhes.</p>
+</div>
+
+
+
   <%= link_to  "Edit Album", edit_album_path, class: "btn btn-outline-info" %>
+
+  <%= link_to  "Edit Track", edit_track_path, class: "btn btn-outline-info" %>
 
   <%= link_to "Back", "/albums/", class: "btn btn-secondary" %>
 </div>
@@ -12,34 +26,43 @@
 <!-- ACOORDION NÃO ESTÁ FUNCIONANDO -->
  
 <div class="accordion"> 
-	<% @tracks.each do |track| %>
+	<% @tracks.each do |trac| %>
   
   <div class="card">
-           <div class="card-header" id="heading<%= track.id%>">
+           <div class="card-header" id="heading<%= trac.id%>">
              <h2 class="mb-0">
-               <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse<%= track.id%>" aria-expanded="false" aria-controls="collapse<%= track.id%>">
-                 <%= track.name%>
+
+               <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse<%= trac.id%>" aria-expanded="false" aria-controls="collapse<%= trac.id%>">
+                 <%= trac.name%>
                </button>
              </h2>
            </div>
 
 
-
-       <div id="collapse<%= track.id%>" class="collapse" aria-labelledby="heading<%= track.id%>" data-parent="#accordionExample">
+       <div id="collapse<%= trac.id%>" class="collapse show" aria-labelledby="heading<%= trac.id%>" data-parent="#accordionExample">
          <div class="card-body">
-           <b> Media Type: </b> <%= track.media_type.name %> <br>
-           <b> Genre: </b> <%= track.genre.name %> <br>
-           <b> Composer: </b> <%= track.composer %> <br>
-           <b> Milliseconds: </b> <%= track.milliseconds %> <br>
-           <b> Size (bytes): </b> <%= track.bytes %> <br>
-           <b> Unit Price: </b> <%= track.unit_price %> <br>
+           <b> Media Type: </b> <%= trac.media_type.name %> <br>
+           <b> Genre: </b> <%= trac.genre.name %> <br>
+           <b> Composer: </b> <%= trac.composer %> <br>
+           <b> Milliseconds: </b> <%= trac.milliseconds %> <br>
+           <b> Size (bytes): </b> <%= trac.bytes %> <br>
+           <b> Unit Price: </b> <%= trac.unit_price %> <br>
+
+           <%= link_to  "Edit Track", edit_track_path, class: "btn btn-primary" %>
+           
          </div>
 
        </div>
+
+
      </div>
+
+     
    </div>
   </div>
+
 <% end %>
+
 
 
 </fieldset>
