@@ -8,9 +8,11 @@
 
 <fieldset>
 
+
+<!-- ACOORDION NÃO ESTÁ FUNCIONANDO -->
  
-<div class="accordion">
-<% @tracks.each do |track| %>
+<div class="accordion"> 
+	<% @tracks.each do |track| %>
   
   <div class="card">
            <div class="card-header" id="heading<%= track.id%>">
@@ -20,6 +22,7 @@
                </button>
              </h2>
            </div>
+
 
 
        <div id="collapse<%= track.id%>" class="collapse" aria-labelledby="heading<%= track.id%>" data-parent="#accordionExample">

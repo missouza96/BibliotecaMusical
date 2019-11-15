@@ -23,15 +23,19 @@
       <div class="list-group">
 
         
-         <table class="table table-bordered table-hover" >
+  <!-- CRIANDO AS DUAS COLUNAS DE ALBUM E ARTISTA -->
+
+  <table class="table table-bordered table-hover" >
   <thead>
     <tr>
       <th scope="col1">Album</th>
       <th scope="col2">Artist</th>
     </tr>
   </thead>
-  <tbody>
-    <% @albums.each do |album| %>
+  
+<!-- PREECHENDO A TABELA COM ALBUM E ARTISTA -->
+
+  <% @albums.each do |album| %>
     <tr>
       <td><%= link_to album.title, album %></td>
       <td><%= album.artist.name %></td>
