@@ -1,11 +1,11 @@
 <!-- arrumar o link dos botões de Album e Artista -->
 
-<div class="container">
+<div class="container" align="center"> 
 <%= link_to "Go To Albums", edit_album_path, class: "btn btn-outline-info" %>
 <%= link_to "Go To Artists", edit_artist_path, class: "btn btn-outline-info" %>
 
 
-<div class="mx-auto" style="width: 500px;">
+<div class="mx-auto" style="width: 800px;">
   <h3> Album: <%= @album.title %> </h3>
   <p class="text-center">Lista de músicas desse álbum.</br>
   Clique na música para exibir os detalhes.</p>
@@ -19,15 +19,19 @@
 
   <%= link_to "Back", "/albums/", class: "btn btn-secondary" %>
 </div>
+</div>
 
 <fieldset>
 
 
 <!-- ACOORDION NÃO ESTÁ FUNCIONANDO -->
- 
+
 <div class="accordion"> 
+
+ 
 	<% @tracks.each do |trac| %>
-  
+
+  <div class="container">
   <div class="card">
            <div class="card-header" id="heading<%= trac.id%>">
              <h2 class="mb-0">
@@ -52,6 +56,7 @@
            
          </div>
 
+
        </div>
 
 
@@ -59,10 +64,12 @@
 
      
    </div>
-  </div>
+
 
 <% end %>
 
 
 
-</fieldset>
+
+
+</div>
