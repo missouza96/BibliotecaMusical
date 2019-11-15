@@ -7,7 +7,7 @@
 	<center>
 		<h3> <%= @artist.name %> Albums</h3><p class="text-secondary">Click album to see tracks.</p><br> 
 
-		<% @albums = Album.where(artist: @artist.id) %>
+		<% @albums = Album.where(artist: @artist.id) %> 
 		<a href="/">
 			<button type="button" class="btn btn-outline-success">Return to Artists</button>
 		</a>

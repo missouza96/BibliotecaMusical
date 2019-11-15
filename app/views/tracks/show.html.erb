@@ -21,12 +21,14 @@
       <p class="card-text"><b> Milliseconds: </b> <%= @track.milliseconds %> </p>
       <p class="card-text"><b> Size (bytes): </b> <%= @track.bytes %> </p>
       <p class="card-text"><b> Unit Price: </b> <%= @track.unit_price %> </p>
-      <p class="card-text"><b> Created at: </b> <%= format(@track.created_at) %> </p>
-      <p class="card-text"><b> Updated at: </b> <%= format(@track.updated_at) %> </p>
+      <p class="card-text"><b> Created at: </b> <%= formatar(@track.created_at) %> </p>
+      <p class="card-text"><b> Updated at: </b> <%= formatar(@track.updated_at) %> </p>
       <%= link_to  "Go to Album", "/albums/#{@track.album.id}", class: "btn btn-primary" %>
     </div>
   </div>
-  <%= link_to  "Back", "/tracks", class: "btn btn-secondary mb-3" %>
+  <a href="/tracks">
+      <button type="button" class="btn btn-outline-success">Return to Tracks</button>
+    </a>
 </fieldset>
 	
 </div>
