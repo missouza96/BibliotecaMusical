@@ -9,19 +9,22 @@
 		<h3><p class="text-secondary">Edit Album</p></h3>
 
 
-			<%= form_for @album, :url =>{:action => "update", :id =>@album} do |f| %>
-			<p>Title: <%= f.text_field 'title' %></p>
-			<p>Artist: <%= f.text_field 'artist' %></p>
-			<button type="button" class="btn btn-primary"><%= link_to "Submit", action: "update" %>
-			</button>
+		<%= form_for @album, :url =>{:action => "update", :id =>@album} do |f| %>
+		<p>Title: <%= f.text_field 'title' %></p>
+		<%= f.select :artist_id, options_for_select(@artists.collect{ |artist| [artist.name, artist.id] },params[:artist_id]),{}, class: "form-control" %>
+		</div>
 
-			<% end %>
 
-			<button type="reset" class="btn btn-secondary"><%= link_to 'Cancel', action: "show" %></button>
+	<button type="button" class="btn btn-primary"><%= link_to "Submit", action: "update" %>
+	</button>
 
-			
-	</center>
-	
+	<% end %>
+
+	<button type="reset" class="btn btn-secondary"><%= link_to 'Cancel', action: "show" %></button>
+
+
+</center>
+
 
 </body>
 </html>
