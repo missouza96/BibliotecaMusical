@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Create Album</title>
+	</head>
+	<body>
+			<h3><p class="text-secondary">New Album</p></h3>
+
+
+			<%= @album.errors.first %>
+
+			<%= form_for @album do |alb| %>	
+
+			<div class="col-auto">
+			        <div class="input-group mb-2">
+			          <div class="input-group-prepend">
+			            <span class="input-group-text" id="basic-addon1">Title:</span>
+			          </div>
+							<%= alb.text_field :title, class: "mr-3" %>
+			        </div>
+			    </div>			
+				 <div class="col-auto">
+			        <div class="input-group mb-2">
+			          <div class="input-group-prepend">
+			            <span class="input-group-text" id="basic-addon1">Artist:</span>
+			          </div>
+			          <%= alb.collection_select(:artist_id, Artist.all, :id, :name) %>
+			        </div>
+			    </div>
+
+
+				<%= alb.submit 'Create', class: "btn btn-primary" %>
+
+          <%= link_to "Cancel", "/albums", class: "btn btn-secondary" %>
+			<% end %>
+	</body>
+</html>
