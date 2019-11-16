@@ -7,8 +7,6 @@
 	<center>
 		<br>
 		<h3><p class="text-secondary">Edit Artist</p></h3>
-
-
 		<%= form_for @artist, :url =>{:action => "update", :id =>@artist} do |f| %>
 			<p>Name: <%= f.text_field 'name' %></p>
 			<%= f.submit "Submit", class: "btn btn-primary" %>

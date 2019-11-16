@@ -1,25 +1,37 @@
-<h3> All Tracks </h3>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tracks</title>
+</head>
+  <body>
+    <br>
+   <div class="container">
+    <h3> All Tracks    <label class="d-inline p-1 bg-primary text-white rounded-pill "><%= Album.count %></label> </h3>
+          <%= form_tag("/tracks", method: "get") do %>
+            <form>
+               <div class="col-7">
+                <div class="form-row align-items-center">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <%= label_tag(:name, "Filter:", class: "input-group-text") %>
+                    </div>
+                    <%= text_field_tag(:name, params['name'], class: "mr-3") %>
+                    <%= submit_tag("Submit", class: "btn btn-outline-success mr-2") %>
+                    <%=link_to "Create Track", new_track_path, class: "btn btn-primary" %>
+                  </div>
+                </div>
+              </div>
+            </form>
+          <% end %>
 
-<%= form_tag("/tracks", method: "get") do %>
-    <form>
-    <div class="col-7">
-      <div class="form-row align-items-center">
-          <div class="input-group mb-2">
-            <div class="input-group-prepend">
-              <%= label_tag(:name, "Filter:", class: "input-group-text") %>
-            </div>
-            <%= text_field_tag(:name, params['name'], class: "mr-3") %>
-            <%= submit_tag("Submit", class: "btn btn-outline-success mr-2") %>
-            <%=link_to "Create Track", new_track_path, class: "btn btn-primary" %>
-          </div>
-        </div>
+      <ol>
+        <% @tracks.each do |track| %>
+        <li class="list-group-item list-group-item"> <%= link_to track.name, track %> </li>
+        <% end %>
+      </ol>
       </div>
-    </form>
+  </body>
+</html>
 
-<% end %>
 
-<ol>
-  <% @tracks.each do |track| %>
-      <li> <%= link_to track.name, track %> </li>
-  <% end %>
-</ol>
+

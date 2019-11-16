@@ -7,7 +7,7 @@
 	<center>
 		<h3> Edit Track </h3>
 
-<%= form_for @track do |f| %>
+<%= form_for @track, :url =>{:action => "update", :id =>@track} do |f| %>
 
   <div class="col-auto">
       <div class="input-group mb-2">
@@ -81,10 +81,9 @@
             </div>
           </div>
 
-    <%= f.submit 'Save', class: "btn btn-primary" %>
+          <%= f.submit 'Save', class: "btn btn-primary" %>
 
-<%= link_to "Cancel", "/tracks", class: "btn btn-secondary" %>
-
+          <%= link_to "Cancel", "/tracks", class: "btn btn-secondary" %>
 <% end %>
 	</center>	
 </body>
