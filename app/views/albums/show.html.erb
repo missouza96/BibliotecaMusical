@@ -1,9 +1,8 @@
 <!-- arrumar o link dos botões de Album e Artista -->
 
 <div class="container" align="center"> 
-<%= link_to "Go To Albums", edit_album_path, class: "btn btn-outline-info" %>
-<%= link_to "Go To Artists", edit_artist_path, class: "btn btn-outline-info" %>
-
+<a href="/albums" class="btn btn-primary">Go To Albums</a>
+<a href="/artists" class="btn btn-primary">Go To Artists</a>
 
 <div class="mx-auto" style="width: 800px;">
   <h3> Album: <%= @album.title %> </h3>

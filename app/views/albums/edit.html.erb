@@ -9,7 +9,7 @@
 		<h3><p class="text-secondary">Edit Album</p></h3>
 
 
-			<%= form_for @album, :url =>{:action => "update", :id =>@album} do |f| %>
+			<%= form_for @album, :url =>{:action => "update", :id =>@album, :name =>@artist} do |f| %>
 			<p>Title: <%= f.text_field 'title' %></p>
 			<p>Artist: <%= f.text_field 'artist' %></p>
 			<button type="button" class="btn btn-primary"><%= link_to "Submit", action: "update" %>
