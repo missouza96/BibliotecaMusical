@@ -7,7 +7,7 @@
 			<h3><p class="text-secondary">New Album</p></h3>
 
 
-			<%= @album.errors.first %>
+			 <%= @album.errors.first %>
 
 			<%= form_for @album do |alb| %>	
 
@@ -25,6 +25,7 @@
 			            <span class="input-group-text" id="basic-addon1">Artist:</span>
 			          </div>
 			          <%= alb.collection_select(:artist_id, Artist.all, :id, :name) %>
+
 			        </div>
 			    </div>
 
