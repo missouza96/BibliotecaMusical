@@ -18,22 +18,11 @@
       </div>
       <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
 
-      <%= form_for @artist, :url =>{:id =>@artist} do |f| %>
-       <div class="col-auto">
-        <div class="input-group mb-2">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Artist</span>
-          </div>
-          <%= f.collection_select(:artist, Artist.all, :id, :name) %>
-        </div>
-    </div>
 
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     <div class="row">
       <div class="list-group">
-
-        <% end %>
 
         
   <!-- CRIANDO AS DUAS COLUNAS DE ALBUM E ARTISTA -->
