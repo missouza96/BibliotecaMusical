@@ -30,7 +30,7 @@
 						<p class="card-text"> Update at: <%= formatar(alb.updated_at) %> </p>
 
 
-						<a href="/tracks/show" class="btn btn-primary">Show tracks</a>
+						<button class="btn btn-primary"><%= link_to alb.title, alb %></button>
 					</div>
 				</div>
 			<% end %>
@@ -38,7 +38,7 @@
 					<div class="card-header">New Album</div>
 					<div class="card-body text-primary">
 						<h5 class="card-title">Add album to <%= @artist.name %> </h5>
-						<a href="/artists/create" class="btn btn-primary">Create</a>
+						<a href="/albums/new" class="btn btn-primary">Create</a>
 					</div>
 				</div>
 			</div>
