@@ -7,19 +7,19 @@
 	<br>	
 	<div class="container">
 
-		<h3>Artist List  
+		<h3>Lista de Artistas  
 		<label class="d-inline p-1 bg-primary text-white rounded-pill "><%= Artist.count%></label> 			
-		<p class="text-secondary">Click name to see album.</p></h3>
+		<p class="text-secondary">Clique no nome para ver o álbum.</p></h3>
 		 <%= form_tag("/artists", method: "get") do %>
 		            <form>
 		               <div class="col-7">
 		                <div class="form-row align-items-center">
 		                  <div class="input-group mb-2">
 		                    <div class="input-group-prepend">
-		                      <%= label_tag(:name, "Artist:", class: "input-group-text") %>
+		                      <%= label_tag(:name, "Artista:", class: "input-group-text") %>
 		                    </div>
 		                    <%= text_field_tag(:name, params['name'], class: "mr-3") %>
-		                    <%= submit_tag("Search", class: "btn btn-outline-success mr-2") %>
+		                    <%= submit_tag("Pesquisar", class: "btn btn-outline-success mr-2") %>
 		                  </div>
 		                </div>
 		              </div>

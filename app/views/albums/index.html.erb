@@ -8,9 +8,9 @@
   <br>  
   <div class="container">
 
-    <h3>Album List  
+    <h3>Lista de Álbuns  
     <label class="d-inline p-1 bg-primary text-white rounded-pill "><%= Album.count %></label>       
-    <p class="text-secondary">Click name to see tracks.</p></h3>
+    <p class="text-secondary">Clique no álbum para visualizar as músicas.</p></h3>
 
     <!-- filtro TITLE -->
 
@@ -20,10 +20,10 @@
                 <div class="form-row align-items-center">
                   <div class="input-group mb-2">
                     <div class="input-group-prepend">
-                      <%= label_tag(:title, "Title:", class: "input-group-text") %>
+                      <%= label_tag(:title, "Título:", class: "input-group-text") %>
                     </div>
                     <%= text_field_tag(:title, params['title'], class: "mr-3") %>
-                    <%= submit_tag("Search", class: "btn btn-outline-success mr-2") %>
+                    <%= submit_tag("Pesquisar", class: "btn btn-outline-success mr-2") %>
                   </div>
                 </div>
               </div>
@@ -38,10 +38,10 @@
                 <div class="form-row align-items-center">
                   <div class="input-group mb-2">
                     <div class="input-group-prepend">
-                      <%= label_tag(:artist, "Artist:", class: "input-group-text") %>
+                      <%= label_tag(:artist, "Artista:", class: "input-group-text") %>
                     </div>
                     <%= text_field_tag(:artist, params['artist'], class: "mr-3") %>
-                    <%= submit_tag("Search", class: "btn btn-outline-success mr-2") %>
+                    <%= submit_tag("Pesquisar", class: "btn btn-outline-success mr-2") %>
                   </div>
                 </div>
               </div>
@@ -57,8 +57,8 @@
   <table class="table table-bordered table-hover" >
   <thead>
     <tr>
-      <th scope="col1">Album</th>
-      <th scope="col2">Artist</th>
+      <th scope="col1">Álbum</th>
+      <th scope="col2">Artista</th>
     </tr>
   </thead>
   
