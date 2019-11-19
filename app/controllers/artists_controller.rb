@@ -1,6 +1,6 @@
 class ArtistsController < ApplicationController
 	def index
-		@artists = Artist.order(:name)
+		@artists = Artist.filter(params['name'])
 		
 	end
 

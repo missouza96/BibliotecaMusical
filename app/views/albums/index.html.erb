@@ -12,15 +12,42 @@
     <label class="d-inline p-1 bg-primary text-white rounded-pill "><%= Album.count %></label>       
     <p class="text-secondary">Click name to see tracks.</p></h3>
 
-    <form class="form-inline my-2 my-lg-0">
-      <div class="text-nowrap bd-highlight">
-        Search for:
-      </div>
-      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+    <!-- filtro TITLE -->
 
+   <%= form_tag("/albums", method: "get") do %>
+            <form>
+               <div class="col-7">
+                <div class="form-row align-items-center">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <%= label_tag(:title, "Title:", class: "input-group-text") %>
+                    </div>
+                    <%= text_field_tag(:title, params['title'], class: "mr-3") %>
+                    <%= submit_tag("Search", class: "btn btn-outline-success mr-2") %>
+                  </div>
+                </div>
+              </div>
+            </form>
+          <% end %>
 
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <!-- filtro ARTIST -->
+
+    <%= form_tag("/albums", method: "get") do %>
+            <form>
+               <div class="col-7">
+                <div class="form-row align-items-center">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <%= label_tag(:artist, "Artist:", class: "input-group-text") %>
+                    </div>
+                    <%= text_field_tag(:artist, params['artist'], class: "mr-3") %>
+                    <%= submit_tag("Search", class: "btn btn-outline-success mr-2") %>
+                  </div>
+                </div>
+              </div>
+            </form>
+          <% end %>
+
     <div class="row">
       <div class="list-group">
 

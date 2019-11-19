@@ -10,14 +10,21 @@
 		<h3>Artist List  
 		<label class="d-inline p-1 bg-primary text-white rounded-pill "><%= Artist.count%></label> 			
 		<p class="text-secondary">Click name to see album.</p></h3>
-
-		<form class="form-inline my-2 my-lg-0">
-			<div class="text-nowrap bd-highlight">
-				Search for:
-			</div>
-			<input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-		</form>
+		 <%= form_tag("/artists", method: "get") do %>
+		            <form>
+		               <div class="col-7">
+		                <div class="form-row align-items-center">
+		                  <div class="input-group mb-2">
+		                    <div class="input-group-prepend">
+		                      <%= label_tag(:name, "Artist:", class: "input-group-text") %>
+		                    </div>
+		                    <%= text_field_tag(:name, params['name'], class: "mr-3") %>
+		                    <%= submit_tag("Search", class: "btn btn-outline-success mr-2") %>
+		                  </div>
+		                </div>
+		              </div>
+		            </form>
+		    <% end %>
 		<div class="row">
 			<div class="list-group">
 
