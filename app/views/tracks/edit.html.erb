@@ -7,6 +7,8 @@
 	<center>
 		<h3> Edit Track </h3>
 
+     <%= @track.errors.first %>
+
 <%= form_for @track, :url =>{:action => "update", :id =>@track} do |f| %>
 
   <div class="col-auto">
