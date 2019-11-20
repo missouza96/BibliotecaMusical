@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Edit Artists</title>
-</head>
-<body>
-	<center>
-		<br>
-		<h3><p class="text-secondary">Edit Artist</p></h3>
-		<%= form_for @artist, :url =>{:action => "update", :id =>@artist} do |f| %>
-			<p>Name: <%= f.text_field 'name' %></p>
-			<%= f.submit "Submit", class: "btn btn-primary" %>
-			<%= link_to 'Back', :back, class: "btn btn-secondary"%>
 
-			<% end %>
-	</center>	
-</body>
-</html>
+<center>
+	<br>
+	<h3><p class="text-secondary">Edit Artist</p></h3>
+	<%= form_for @artist, :url =>{:action => "update", :id =>@artist} do |f| %>
+	<p>Name: <%= f.text_field 'name' %></p>
+	<%= f.submit "Submit", class: "btn btn-primary" %>
+	<%= link_to 'Back', :back, class: "btn btn-secondary"%>
+
+	<% end %>
+</center>	

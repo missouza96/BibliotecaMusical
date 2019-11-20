@@ -1,25 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Edit Albums</title>
-</head>
-<body>
-	<center>
-		<br>
-		<h3><p class="text-secondary">Edit Album</p></h3>
 
-			<%= form_for @album, :url =>{:action => "update", :id => @album} do |f| %>
+<center>
+	<br>
+	<h3><p class="text-secondary">Edit Album</p></h3>
 
-			<p>Title: <%= f.text_field 'title' %></p>
-			
-			<%= f.submit "Submit", class: "btn btn-primary" %>
-			<%= link_to 'Back', :back, class: "btn btn-secondary"%>
+	<%= form_for @album, :url =>{:action => "update", :id => @album} do |f| %>
+
+	<p>Title: <%= f.text_field 'title' %></p>
+	
+	<%= f.submit "Submit", class: "btn btn-primary" %>
+	<%= link_to 'Back', :back, class: "btn btn-secondary"%>
 
 
 
-		<% end %>
+	<% end %>
 </center>
-
-
-</body>
-</html>

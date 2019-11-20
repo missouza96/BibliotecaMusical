@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Create Album</title>
-	</head>
-	<body>
-			<h3><p class="text-secondary">New Album</p></h3>
 
+			<h3><p class="text-secondary">New Album</p></h3>
 
 			 <%= @album.errors.first %>
 
-			<form>
 			<%= form_for @album do |al| %>	
 
 			
@@ -26,16 +19,13 @@
 			          <div class="input-group-prepend">
 			            <span class="input-group-text" id="basic-addon1">Artist:</span>
 			          </div>
-			          <%= al.collection_select(:artist_id, Artist.all, :id, :name) %>
+			          <%= al.collection_select(:artist, Artist.all, :id, :name) %>
 
 			        </div>
 			    </div>
-			   </form>
 
 
 				<%= al.submit "Submit", class: "btn btn-primary" %>
 
-          <%= link_to "Cancel", "/albums", class: "btn btn-secondary" %>
+         		 <%= link_to "Cancel", "/albums", class: "btn btn-secondary" %>
 			<% end %>
-	</body>
-</html>

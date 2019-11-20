@@ -1,82 +1,73 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Albums</title>
-</head>
-<body> 
 
-  <br>  
-  <div class="container">
+<br>  
+<div class="container">
 
-    <h3>Albums List
+  <h3>Albums List
     <label class="d-inline p-1 bg-primary text-white rounded-pill "><%= Album.count %></label>       
     <p class="text-secondary">Click name to see tracks.</p></h3>
 
     <!-- filtro TITLE -->
 
-   <%= form_tag("/albums", method: "get") do %>
-            <form>
-               <div class="col-7">
-                <div class="form-row align-items-center">
-                  <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                      <%= label_tag(:title, "Title:", class: "input-group-text") %>
-                    </div>
-                    <%= text_field_tag(:title, params['title'], class: "mr-3") %>
-                    <%= submit_tag("Search", class: "btn btn-outline-success mr-2") %>
-                  </div>
-                </div>
-              </div>
-            </form>
-          <% end %>
-
-    <!-- filtro ARTIST -->
-
     <%= form_tag("/albums", method: "get") do %>
-            <form>
-               <div class="col-7">
-                <div class="form-row align-items-center">
-                  <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                      <%= label_tag(:artist, "Artist:", class: "input-group-text") %>
-                    </div>
-                    <%= text_field_tag(:artist, params['artist'], class: "mr-3") %>
-                    <%= submit_tag("Search", class: "btn btn-outline-success mr-2") %>
-                  </div>
-                </div>
-              </div>
-            </form>
-          <% end %>
+    <form>
+     <div class="col-7">
+      <div class="form-row align-items-center">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <%= label_tag(:title, "Title:", class: "input-group-text") %>
+          </div>
+          <%= text_field_tag(:title, params['title'], class: "mr-3") %>
+          <%= submit_tag("Search", class: "btn btn-outline-success mr-2") %>
+        </div>
+      </div>
+    </div>
+  </form>
+  <% end %>
 
-    <div class="row">
-      <div class="list-group">
+  <!-- filtro ARTIST -->
 
-        
-  <!-- CRIANDO AS DUAS COLUNAS DE ALBUM E ARTISTA -->
-
-  <table class="table table-bordered table-hover" >
-  <thead>
-    <tr>
-      <th scope="col1">Title</th>
-      <th scope="col2">Artist</th>
-    </tr>
-  </thead>
-  
-<!-- PREECHENDO A TABELA COM ALBUM E ARTISTA -->
-
-  <% @albums.each do |album| %>
-    <tr>
-      <td><%= link_to album.title, album %></td>
-      <td><%= album.artist.name %></td>
-    </tr>
-  </tbody>
-    <% end %>
-</table>
-
-
-      </div>  
+  <%= form_tag("/albums", method: "get") do %>
+  <form>
+   <div class="col-7">
+    <div class="form-row align-items-center">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <%= label_tag(:artist, "Artist:", class: "input-group-text") %>
+        </div>
+        <%= text_field_tag(:artist, params['artist'], class: "mr-3") %>
+        <%= submit_tag("Search", class: "btn btn-outline-success mr-2") %>
+      </div>
     </div>
   </div>
-</body>
-</html>
+</form>
+<% end %>
 
+<div class="row">
+  <div class="list-group">
+
+    
+    <!-- CRIANDO AS DUAS COLUNAS DE ALBUM E ARTISTA -->
+
+    <table class="table table-bordered table-hover" >
+      <thead>
+        <tr>
+          <th scope="col1">Title</th>
+          <th scope="col2">Artist</th>
+        </tr>
+      </thead>
+      
+      <!-- PREECHENDO A TABELA COM ALBUM E ARTISTA -->
+
+      <% @albums.each do |album| %>
+      <tr>
+        <td><%= link_to album.title, album %></td>
+        <td><%= album.artist.name %></td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+
+
+</div>  
+</div>
+</div>

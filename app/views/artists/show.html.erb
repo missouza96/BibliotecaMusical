@@ -1,47 +1,40 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Artist Albums</title>
-	</head>
-	<body>
-		<center>
-			
-			<h3> <%= @artist.name %> Albums</h3>
-			<p class="text-secondary">Click album to see tracks.</p><br> 
 
-			<a href="/">
-				<button type="button" class="btn btn-outline-success">Return to Artists</button>
-			</a>
+<center>
+	
+	<h3> <%= @artist.name %> Albums</h3>
+	<p class="text-secondary">Click album to see tracks.</p><br> 
 
-			<a href="/artists/update">
-				<button type="button" class="btn btn-info"> <%= link_to  "Edit", edit_artist_path %></button>
-			</a>
+	<a href="/">
+		<button type="button" class="btn btn-outline-success">Return to Artists</button>
+	</a>
 
-			<% @albums.each do |alb| %>
+	<a href="/artists/update">
+		<button type="button" class="btn btn-info"> <%= link_to  "Edit", edit_artist_path %></button>
+	</a>
 
-				<div class="card" style="width: 18rem;">
-					<div class="card-body"> 
-						<h5 class="card-title">
-							<%= alb.title %>
-						</h5>
+	<% @albums.each do |alb| %>
 
-						<p class="card-text"> Tracks: <%= alb.tracks.count %> </p>
-						<p class="card-text"> Created at: <%= formatar(alb.created_at) %> </p>
-						<p class="card-text"> Update at: <%= formatar(alb.updated_at) %> </p>
+	<div class="card" style="width: 18rem;">
+		<div class="card-body"> 
+			<h5 class="card-title">
+				<%= alb.title %>
+			</h5>
+
+			<p class="card-text"> Tracks: <%= alb.tracks.count %> </p>
+			<p class="card-text"> Created at: <%= formatar(alb.created_at) %> </p>
+			<p class="card-text"> Update at: <%= formatar(alb.updated_at) %> </p>
 
 
-						<button class="btn btn-primary"><%= link_to "Show tracks", alb %></button>
-					</div>
-				</div>
-			<% end %>
-				<div class="card border-primary mb-3" style="max-width: 18rem;">
-					<div class="card-header">New Album</div>
-					<div class="card-body text-primary">
-						<h5 class="card-title">Add album to <%= @artist.name %> </h5>
-						<a href="/albums/new" class="btn btn-primary">Create</a>
-					</div>
-				</div>
-			</div>
-		</center>
-	</body>
-</html>
+			<button class="btn btn-primary"><%= link_to "Show tracks", alb %></button>
+		</div>
+	</div>
+	<% end %>
+	<div class="card border-primary mb-3" style="max-width: 18rem;">
+		<div class="card-header">New Album</div>
+		<div class="card-body text-primary">
+			<h5 class="card-title">Add album to <%= @artist.name %> </h5>
+			<a href="/albums/new" class="btn btn-primary">Create</a>
+		</div>
+	</div>
+</div>
+</center>

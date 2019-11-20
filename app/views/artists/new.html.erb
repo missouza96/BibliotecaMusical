@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Criar Artista</title>
-	</head>
-	<body>
-		<center>
-			<h3><p class="text-secondary">New Artist</p></h3>
+
+<center>
+	<h3><p class="text-secondary">New Artist</p></h3>
 
 
-			<%= @artist.errors.first %>
+	<%= @artist.errors.first %>
 
-			<%= form_for @artist do |ar| %>				
-				<p>Name: <%= ar.text_field :name, class: "mr-3" %></p>						
-				<%= ar.submit "Submit", class: "btn btn-primary" %>
-				<%= link_to 'Cancel', :back, class: "btn btn-secondary"%>
-			<% end %>
-		</center>	
-	</body>
-</html>
+	<%= form_for @artist do |ar| %>				
+	<p>Name: <%= ar.text_field :name, class: "mr-3" %></p>						
+	<%= ar.submit "Submit", class: "btn btn-primary" %>
+	<%= link_to 'Cancel', :back, class: "btn btn-secondary"%>
+	<% end %>
+</center>	
