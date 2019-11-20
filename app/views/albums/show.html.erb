@@ -1,14 +1,14 @@
 <!-- arrumar o link dos botões de Album e Artista -->
 
 <div class="container" align="center"> 
-<a href="/albums" class="btn btn-primary">Go To Albums</a>
-<a href="/artists" class="btn btn-primary">Go To Artists</a>
+  <a href="/albums" class="btn btn-primary">Go To Albums</a>
+  <a href="/artists" class="btn btn-primary">Go To Artists</a>
 
-<div class="mx-auto" style="width: 800px;">
-  <h3> Album: <%= @album.title %> </h3>
-  <p class="text-center">Lista de músicas desse álbum.</br>
-  Clique na música para exibir os detalhes.</p>
-</div>
+  <div class="mx-auto" style="width: 800px;">
+    <h3> Album: <%= @album.title %> </h3>
+    <p class="text-center">Lista de músicas desse álbum.</br>
+    Clique na música para exibir os detalhes.</p>
+  </div>
 
 
 
@@ -23,47 +23,47 @@
 <fieldset>
 
 
-<div id="accordion"> 
+  <div id="accordion"> 
 
- 
-	<% @tracks.each do |trac| %>
+   
+   <% @tracks.each do |trac| %>
 
-  <div class="container">
-  <div class="card" style="width: 50rem;">
-           <div class="card-header" id="heading<%= trac.id%>">
-             <h5 class="mb-0">
+   <div class="container">
+    <div class="card" style="width: 50rem;">
+     <div class="card-header" id="heading<%= trac.id%>">
+       <h5 class="mb-0">
 
-               <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse<%= trac.id%>" aria-expanded="false" aria-controls="collapse<%= trac.id%>">
-                 <%= trac.name%>
-               </button>
-             </h5>
-           </div>
-
-
-       <div id="collapse<%= trac.id%>" class="collapse" aria-labelledby="heading<%= trac.id%>" data-parent="#accordion">
-         <div class="card-body">
-           <b> Media Type: </b> <%= trac.media_type.name %> <br>
-           <b> Genre: </b> <%= trac.genre.name %> <br>
-           <b> Composer: </b> <%= trac.composer %> <br>
-           <b> Milliseconds: </b> <%= trac.milliseconds %> <br>
-           <b> Size (bytes): </b> <%= trac.bytes %> <br>
-           <b> Unit Price: </b> <%= trac.unit_price %> <br>
-
-           <%= link_to  "Edit Track", edit_track_path, class: "btn btn-primary" %>
-           
-         </div>
+         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse<%= trac.id%>" aria-expanded="false" aria-controls="collapse<%= trac.id%>">
+           <%= trac.name%>
+         </button>
+       </h5>
+     </div>
 
 
+     <div id="collapse<%= trac.id%>" class="collapse" aria-labelledby="heading<%= trac.id%>" data-parent="#accordion">
+       <div class="card-body">
+         <b> Media Type: </b> <%= trac.media_type.name %> <br>
+         <b> Genre: </b> <%= trac.genre.name %> <br>
+         <b> Composer: </b> <%= trac.composer %> <br>
+         <b> Milliseconds: </b> <%= trac.milliseconds %> <br>
+         <b> Size (bytes): </b> <%= trac.bytes %> <br>
+         <b> Unit Price: </b> <%= trac.unit_price %> <br>
+
+         <%= link_to  "Edit Track", edit_track_path, class: "btn btn-primary" %>
+         
        </div>
 
 
      </div>
 
-     
+
    </div>
 
+   
+ </div>
 
-<% end %>
+
+ <% end %>
 
 
 
