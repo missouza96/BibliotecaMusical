@@ -5,15 +5,15 @@
 	</head>
 	<body>
 		<center>
-			<h3><p class="text-secondary">Novo Artista</p></h3>
+			<h3><p class="text-secondary">New Artist</p></h3>
 
 
 			<%= @artist.errors.first %>
 
 			<%= form_for @artist do |ar| %>				
-				<p>Nome: <%= ar.text_field :name, class: "mr-3" %></p>						
-				<%= ar.submit "Criar", class: "btn btn-primary" %>
-				<%= link_to 'Voltar', :back, class: "btn btn-secondary"%>
+				<p>Name: <%= ar.text_field :name, class: "mr-3" %></p>						
+				<%= ar.submit "Submit", class: "btn btn-primary" %>
+				<%= link_to 'Cancel', :back, class: "btn btn-secondary"%>
 			<% end %>
 		</center>	
 	</body>
