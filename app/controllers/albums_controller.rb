@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
     def index
-		@albums = Album.filter(params['title''artist'])
+		@albums = Album.filtertitle(params['title'])
+		@albums = Album.filterartist(params['artist'])
 		
 	end
 
@@ -49,6 +50,6 @@ class AlbumsController < ApplicationController
 
 	private 
 	def album_params
-		params.require(:album).permit(:title, :artist)
+		params.require(:album).permit(:title, :artist_id)
 	end
 end

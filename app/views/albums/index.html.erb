@@ -9,7 +9,6 @@
     <!-- filtro TITLE -->
 
     <%= form_tag("/albums", method: "get") do %>
-    <form>
      <div class="col-7">
       <div class="form-row align-items-center">
         <div class="input-group mb-2">
@@ -17,35 +16,27 @@
             <%= label_tag(:title, "Title:", class: "input-group-text") %>
           </div>
           <%= text_field_tag(:title, params['title'], class: "mr-3") %>
-          <%= submit_tag("Search", class: "btn btn-outline-success mr-2") %>
         </div>
       </div>
     </div>
-  </form>
-  <% end %>
-
   <!-- filtro ARTIST -->
-
-  <%= form_tag("/albums", method: "get") do %>
-  <form>
    <div class="col-7">
     <div class="form-row align-items-center">
       <div class="input-group mb-2">
         <div class="input-group-prepend">
           <%= label_tag(:artist, "Artist:", class: "input-group-text") %>
         </div>
-        <%= text_field_tag(:artist, params['artist'], class: "mr-3") %>
+        <%= text_field_tag(:artist, params['artist_id'], class: "mr-3") %>
         <%= submit_tag("Search", class: "btn btn-outline-success mr-2") %>
       </div>
     </div>
   </div>
-</form>
 <% end %>
 
 <div class="row">
   <div class="list-group">
 
-    
+
     <!-- CRIANDO AS DUAS COLUNAS DE ALBUM E ARTISTA -->
 
     <table class="table table-bordered table-hover" >
@@ -55,7 +46,7 @@
           <th scope="col2">Artist</th>
         </tr>
       </thead>
-      
+
       <!-- PREECHENDO A TABELA COM ALBUM E ARTISTA -->
 
       <% @albums.each do |album| %>
