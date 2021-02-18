@@ -1,4 +1,4 @@
-# Para Executar o Projecto na sua máquina
+# Para Executar o Projeto na sua máquina
 
 Ter Instalado:
 
