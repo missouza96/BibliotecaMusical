@@ -6,7 +6,7 @@ Ter Instalado:
 
 * Rails 5.1.6
 
-* git clone https://github.com/UniREDENTOR/Rails.git
+* git clone https://github.com/missouza96/BibliotecaMusical
 
 * cd Rails
 
